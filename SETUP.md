@@ -156,4 +156,31 @@ No other dependencies needed. No backend. No database. 100% static data.
 
 ---
 
+## 🔐 Live Deployment & Access
+
+**Deployed Site:** https://nexgile-automotive-portal.vercel.app/
+
+### Login Credentials
+
+Use these credentials to access the live portal:
+
+| Role | Email | Password |
+|------|-------|----------|
+| Admin/Manager | `manager@nexgile.com` | `demo123` |
+| Demo User | `test@nexgile.com` | `demo123` |
+
+### Deployment Details
+
+- **Platform:** Vercel (Auto-deployed from GitHub)
+- **Repository:** https://github.com/Shravank9/nexgile-automotive-portal
+- **Branch:** main
+- **Runtime:** Node.js 24.x
+- **Build Command:** `npm ci && npm run build`
+- **Build Directory:** `nexgile-portal/`
+- **Output:** `build/`
+
+All credentials are also displayed on the login page in an expandable info panel.
+
+---
+
 *Built for Nexgile Technologies – Automotive Retail Portal Assessment*
