@@ -156,4 +156,21 @@ No other dependencies needed. No backend. No database. 100% static data.
 
 ---
 
+## 🔐 Demo Login Credentials
+
+### Local Development
+When running locally on `http://localhost:3000`, use:
+
+| Email | Password |
+|-------|----------|
+| `manager@nexgile.com` | `demo123` |
+| `test@nexgile.com` | `demo123` |
+
+### Live Deployment
+**Public URL:** https://nexgile-automotive-portal.vercel.app/
+
+Same credentials work on the live deployment. Credentials are also displayed in an expandable info panel on the login page.
+
+---
+
 *Built for Nexgile Technologies – Automotive Retail Portal Assessment*
