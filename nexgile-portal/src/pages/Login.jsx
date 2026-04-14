@@ -67,6 +67,17 @@ export default function Login({ onLogin }) {
           <div style={{ fontSize: 13, color: 'var(--muted)' }}>Sign in to your dealership dashboard</div>
         </div>
 
+        {/* Demo Credentials Hint */}
+        <div style={{
+          background: 'rgba(232,160,32,0.1)', border: '1px solid rgba(232,160,32,0.25)',
+          borderRadius: 8, padding: '12px 14px', fontSize: 12, color: 'var(--accent)',
+          marginBottom: 20, lineHeight: 1.5
+        }}>
+          <div style={{ fontWeight: 600, marginBottom: 6 }}>📝 Demo Credentials</div>
+          <div>Email: <code style={{background: 'rgba(0,0,0,0.2)', padding: '2px 6px', borderRadius: 3}}>manager@nexgile.com</code></div>
+          <div>Password: <code style={{background: 'rgba(0,0,0,0.2)', padding: '2px 6px', borderRadius: 3}}>demo123</code></div>
+        </div>
+
         <form onSubmit={handleSubmit}>
           <div style={{ marginBottom: 14 }}>
             <label style={{ display: 'block', fontSize: 11, textTransform: 'uppercase', letterSpacing: '1px', color: 'var(--muted)', fontWeight: 600, marginBottom: 6 }}>Email Address</label>
