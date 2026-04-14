@@ -4,6 +4,7 @@ export default function Login({ onLogin }) {
   const [form, setForm]     = useState({ email: 'manager@nexgile.com', password: 'demo123' });
   const [loading, setLoading] = useState(false);
   const [error, setError]   = useState('');
+  const [showInfo, setShowInfo] = useState(false);
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -131,12 +132,72 @@ export default function Login({ onLogin }) {
         <div style={{
           marginTop: 24, padding: '14px', borderRadius: 10,
           background: 'rgba(255,255,255,0.03)', border: '1px solid var(--border)',
-          fontSize: 12, color: 'var(--muted)', lineHeight: 1.7
-        }}>
-          <strong style={{ color: 'var(--accent)' }}>Demo credentials</strong><br/>
-          Email: manager@nexgile.com<br/>
-          Password: <code style={{ color: 'var(--text)' }}>demo123</code>
+          fontSize: 12, color: 'var(--muted)', lineHeight: 1.7, textAlign: 'center', cursor: 'pointer'
+        }} onClick={() => setShowInfo(!showInfo)}>
+          <strong style={{ color: 'var(--accent)' }}>📋 View Demo Credentials & Project Info</strong> {showInfo ? '▼' : '▶'}
         </div>
+
+        {showInfo && (
+          <div style={{
+            marginTop: 16, maxHeight: 600, overflowY: 'auto',
+            background: 'rgba(0,0,0,0.3)', border: '1px solid var(--border)',
+            borderRadius: 10, padding: 20, fontSize: 12, color: 'var(--muted)', lineHeight: 1.8
+          }}>
+            {/* Credentials */}
+            <div style={{ marginBottom: 24 }}>
+              <div style={{ fontFamily: 'var(--syne)', fontWeight: 700, fontSize: 14, color: '#fff', marginBottom: 12 }}>🔐 Login Credentials</div>
+              <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: 11 }}>
+                <thead>
+                  <tr style={{ background: 'rgba(255,255,255,0.05)', borderBottom: '1px solid var(--border)' }}>
+                    <th style={{ padding: 8, textAlign: 'left', color: 'var(--accent)' }}>Role</th>
+                    <th style={{ padding: 8, textAlign: 'left', color: 'var(--accent)' }}>Email</th>
+                    <th style={{ padding: 8, textAlign: 'left', color: 'var(--accent)' }}>Password</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr style={{ borderBottom: '1px solid rgba(255,255,255,0.05)' }}>
+                    <td style={{ padding: 8 }}>Admin</td>
+                    <td style={{ padding: 8 }}>manager@nexgile.com</td>
+                    <td style={{ padding: 8 }}><code style={{background: 'rgba(0,0,0,0.3)', padding: '2px 6px', borderRadius: 3}}>demo123</code></td>
+                  </tr>
+                  <tr>
+                    <td style={{ padding: 8 }}>Demo User</td>
+                    <td style={{ padding: 8 }}>test@nexgile.com</td>
+                    <td style={{ padding: 8 }}><code style={{background: 'rgba(0,0,0,0.3)', padding: '2px 6px', borderRadius: 3}}>demo123</code></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            {/* Pages */}
+            <div style={{ marginBottom: 24 }}>
+              <div style={{ fontFamily: 'var(--syne)', fontWeight: 700, fontSize: 14, color: '#fff', marginBottom: 12 }}>📄 Available Pages</div>
+              <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
+                <li style={{ marginBottom: 8 }}><strong style={{color: 'var(--accent)'}}>Dashboard</strong> - Real-time KPIs & overview</li>
+                <li style={{ marginBottom: 8 }}><strong style={{color: 'var(--accent)'}}>Analytics</strong> - Sales forecasting & BI</li>
+                <li style={{ marginBottom: 8 }}><strong style={{color: 'var(--accent)'}}>Inventory</strong> - Vehicle management</li>
+                <li style={{ marginBottom: 8 }}><strong style={{color: 'var(--accent)'}}>Leads</strong> - Lead tracking</li>
+                <li style={{ marginBottom: 8 }}><strong style={{color: 'var(--accent)'}}>Sales</strong> - Sales pipeline</li>
+                <li style={{ marginBottom: 8 }}><strong style={{color: 'var(--accent)'}}>F&I</strong> - Finance & Insurance</li>
+                <li style={{ marginBottom: 8 }}><strong style={{color: 'var(--accent)'}}>Service</strong> - Service scheduling</li>
+                <li style={{ marginBottom: 8 }}><strong style={{color: 'var(--accent)'}}>Appraisal</strong> - Vehicle appraisals</li>
+                <li><strong style={{color: 'var(--accent)'}}>Settings</strong> - User preferences</li>
+              </ul>
+            </div>
+
+            {/* Tech Stack */}
+            <div>
+              <div style={{ fontFamily: 'var(--syne)', fontWeight: 700, fontSize: 14, color: '#fff', marginBottom: 12 }}>⚙️ Tech Stack</div>
+              <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
+                <li style={{ marginBottom: 6 }}><strong>Frontend:</strong> React 18.2 + React Router v6</li>
+                <li style={{ marginBottom: 6 }}><strong>Build:</strong> Create React App (react-scripts 5.0)</li>
+                <li style={{ marginBottom: 6 }}><strong>Runtime:</strong> Node.js 24.x</li>
+                <li style={{ marginBottom: 6 }}><strong>Deployment:</strong> Vercel (Auto-deployed from GitHub)</li>
+                <li><strong>Data:</strong> Static sample data (JSON)</li>
+              </ul>
+            </div>
+          </div>
+        )}
       </div>
 
       <style>{`@keyframes spin { to { transform: rotate(360deg); } }`}</style>
