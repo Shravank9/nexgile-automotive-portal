@@ -1,4 +1,5 @@
 {
+  "root": "nexgile-portal",
   "buildCommand": "npm ci && npm run build",
   "outputDirectory": "build",
   "env": {
