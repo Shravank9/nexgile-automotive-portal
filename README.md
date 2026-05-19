@@ -2,7 +2,7 @@
 
 Full-featured React automotive dealership portal with unified inventory, leads, sales, F&I, and service operations — all in one real-time platform.
 
-**Live Demo:** https://nexgile-automotive-portal.vercel.app/
+**Live Demo:** https://nexgile-automotive-portal.vercel.app
 
 ---
 
